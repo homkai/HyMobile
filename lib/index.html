@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>HyMobile</title>
+</head>
+<body>
+<section id="hy_global_ctn"></section>
+<section id="hy_view_ctn"></section>
+<script src="lib/vendor/zepto/zepto.js"></script>
+<script src="lib/vendor/zepto/touch.js"></script>
+<script src="lib/loader/sea-debug.js"></script>
+<script src="lib/loader/loader-config.js"></script>
+<script>
+    seajs.use('hy', function(HY){
+        HY.run(function(require){
+            // 这里可以做一些整个APP的初始化工作
+            require.async('view', function(View){
+                View.run();
+            });
+        });
+    });
+</script>
+</body>
+</html>
