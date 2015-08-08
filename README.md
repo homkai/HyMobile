@@ -25,6 +25,19 @@ HyMobile：宏奕移动H5单页应用框架
     }
 - Route.reg(rule, dist)实现自定义路由规则，rule支持关键字和正则两种形式，dist直接传对象也可以通过callback返回
 
+# Event
+- view级别的：Event.on/emit/off，适合使用当前页面的一些消息传递，跳转action的时候自动销毁，无需担心未销毁导致bug
+- global级别的：Event.onG/emitG/offG，适合用于整个APP的消息传递，需自行销毁事件，以方便污染
+
+# Structure
+- index.html 入口文件
+- lib js文件
+- lib/loader seajs及配置
+- lib/vender zepto及touch
+- lib/core 框架核心支撑模块
+- lib/base 项目基础模块，如工具类模块
+- lib/app/... APP业务模块
+
 # FAQ
 Q: 从/module1/action1&id=123到/module1/action1&id=321会不会重新执行action1方法
 
