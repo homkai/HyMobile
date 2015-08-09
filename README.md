@@ -29,6 +29,16 @@ HyMobile：宏奕移动H5单页应用框架
 - view级别的：Event.on/emit/off，适合使用当前页面的一些消息传递，跳转action的时候自动销毁，无需担心未销毁导致bug
 - global级别的：Event.onG/emitG/offG，适合用于整个APP的消息传递，需自行销毁事件，以方便污染
 
+# Cache
+- 采用localStorage提供了对缓存的支持，setItem/getItem/removeItem 支持链式写法，因为主要面向移动设备，所以没有兼容不支持localStorage的情况
+
+# Time
+- 编码时，应避免依赖本地时间，应该以服务器时间为准，提供now方法返回当前服务器的时间戳（ms）
+- format方法提供了对格式化时间的支持 ymdhiswx 年月日 时分秒 星期[0-6] 星期[一到日] 如格式化成2015-08-9 23:16 星期日则传参 'yyy-mm-d hh:ii 星期x' 
+
+# Data
+- query方法，自动带上入口URL中query参数，统一成功和失败的回调，支持缓存
+
 # Structure
 - index.html 入口文件
 - lib js文件
