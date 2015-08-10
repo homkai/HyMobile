@@ -7,12 +7,16 @@ HyMobile：宏奕移动H5单页应用框架
 - 基于hashchange实现强大而灵活的路由机制，有框架默认的路由规则，亦支持自定义路由规则
 - 支持module和action两级构造方法（_init）和析构方法（_destroy），编码更灵活
 - 提供了众多常用组件：url、time、cache、view、data等
+- seajs module支持本地缓存（localStorage），大大加快第二次进页面的加载速度
+- URL无权访问到模板模块、_打头的path，如_core、_base等基础modules
 
-## Debug Mode
-使用?hyDebug=1参数开启调试模式
+## Tips
+- 使用?hyDebug=1参数开启调试模式
+- 模板文件放在tpl文件夹内，模块id以tpl_打头
 
 ## Config
-在入口文件，seajs.use加载HY后，通过HY.run方法传入配置参数或者初始化回调方法
+- 在入口文件，seajs.use加载HY后，通过HY.run方法传入配置参数或者初始化回调方法
+- loader-config.js中配置module alias，如 event: core/event.js?c=y&v=150810093722 后面的参数c=y表示缓存该module，v=版本号
 
 # Core Module
 核心模块提供了对框架底层的支撑，助力开发更加便捷
