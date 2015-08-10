@@ -7,7 +7,7 @@ HyMobile：宏奕移动H5单页应用框架
 - 基于hashchange实现强大而灵活的路由机制，有框架默认的路由规则，亦支持自定义路由规则
 - 支持module和action两级构造方法（_init）和析构方法（_destroy），编码更灵活
 - 提供了众多常用组件：url、time、cache、view、data等
-- seajs module支持本地缓存（localStorage），大大加快第二次进页面的加载速度
+- 缓存seajs modules到localStorage，大大加快页面的加载速度，减少服务器请求
 - URL无权访问到模板模块、_打头的path，如_core、_base等基础modules
 
 ## Tips
@@ -56,7 +56,7 @@ HyMobile：宏奕移动H5单页应用框架
 - lib/app/... APP业务模块
 
 # TODO
-- 处理下seajs加载后的模块缓存到本地，可采用版本的概念处理更新问题
+- ~~处理下seajs加载后的模块缓存到本地，可采用版本的概念处理更新缓存的问题~~
 - 引入Node.js gulp，将css自动打包成seajs模块，将React JSX自动编译成js
 - 引入Material UI或者 React Bootstrap提供默认的底层UI，并完成loading、dialog、bubble
 
