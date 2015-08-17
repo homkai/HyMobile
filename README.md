@@ -13,6 +13,7 @@ HyMobile：宏奕移动H5单页应用框架
 ## Tips
 - 使用?hyDebug=1参数开启调试模式
 - 模板文件放在tpl文件夹内，模块id以tpl_打头
+- 引入几点基础概念：module（模块，与app下seajs的module一致）action（操作，与app下seajs module暴露的方法一致）global（全局，因为是单页应用，所以所有hash产生的页面共享全局变量）view（页面，module/action对应到一个view）
 
 ## Config
 - 在入口文件，seajs.use加载HY后，通过HY.run方法传入配置参数或者初始化回调方法
