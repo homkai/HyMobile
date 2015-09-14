@@ -13,8 +13,13 @@ HyMobile：宏奕移动H5单页应用框架
 
 ## Tips
 - 使用?hyDebug=1参数开启调试模式
+<<<<<<< HEAD
 - 业务逻辑文件放在app文件夹，模板文件放在tpl文件夹，样式文件放在style文件夹。通过gulp命令自动包装模板和样式为module，模板文件以tpl_打头，样式文件以css_打头。
 - 你可以扩展自己喜爱的模板引擎，也可以引入less、sass等，只需自行完成gulpfile.js即可。
+=======
+- 模板文件放在tpl文件夹内，模块id以tpl_打头
+- 引入几点基础概念：module（模块，与app下seajs的module一致）action（操作，与app下seajs module暴露的方法一致）global（全局，因为是单页应用，所以所有hash产生的页面共享全局变量）view（页面，module/action对应到一个view）
+>>>>>>> origin/master
 
 ## Config
 - 在入口文件，seajs.use加载HY后，通过HY.run方法传入配置参数或者初始化回调方法
