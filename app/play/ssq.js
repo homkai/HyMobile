@@ -9,13 +9,15 @@ define('play/ssq', function(require, exports, module){
     };
 
     exports.run = function(req, ctn){
-        console.log('run', Date.now());
-        var html = '<a href="javascript:;" id="test" data-tapRoute="play/ssq/order">Go to DLT</a>';
+        console.log('play/ssq->run', Date.now());
+        var html = '<a href="javascript:;" data-tapRoute="play/ssq/order">play/ssq/order</a><br><a href="javascript:;" data-tapRoute="index/main/run">index/main/run</a>';
         $(ctn).html(html);
     };
 
-    exports.order = function(req, view){
-        console.log('order', Date.now());
+    exports.order = function(req, ctn){
+        console.log('play/ssq->order', Date.now());
+        var html = '<a href="javascript:;" data-tapRoute="play/ssq/run">Go Back</a>';
+        $(ctn).html(html);
     };
 
     exports.run_destroy = function(){

@@ -3,16 +3,18 @@ HyMobile：宏奕移动H5单页应用框架
 
 # Overview
 - HyMobile是基于seajs、zepto（jquery亦可）建立起来的单页应用框架
-- 内置事件机制，分global和view两个级别，可有效解决页面级的事件未销毁带来的问题
+- 内置事件机制，分global和module两个级别，可有效解决页面级的事件未销毁带来的问题
 - 基于hashchange实现强大而灵活的路由机制，有框架默认的路由规则，亦支持自定义路由规则
 - 支持module和action两级构造方法（_init）和析构方法（_destroy），编码更灵活
 - 提供了众多常用组件：url、time、cache、view、data等
 - 缓存seajs modules到localStorage，大大加快页面的加载速度，减少服务器请求
 - URL无权访问到模板模块、_打头的path，如_core、_base等基础modules
+- 自动打包样式文件、模板文件为module，框架支持原生HTML、React和doT模板引擎，你也可以按自己的喜好进行扩展
 
 ## Tips
 - 使用?hyDebug=1参数开启调试模式
-- 模板文件放在tpl文件夹内，模块id以tpl_打头
+- 业务逻辑文件放在app文件夹，模板文件放在tpl文件夹，样式文件放在style文件夹。通过gulp命令自动包装模板和样式为module，模板文件以tpl_打头，样式文件以css_打头。
+- 你可以扩展自己喜爱的模板引擎，也可以引入less、sass等，只需自行完成gulpfile.js即可。
 
 ## Config
 - 在入口文件，seajs.use加载HY后，通过HY.run方法传入配置参数或者初始化回调方法
@@ -33,8 +35,8 @@ HyMobile：宏奕移动H5单页应用框架
 - Route.reg(rule, dist)实现自定义路由规则，rule支持关键字和正则两种形式，dist直接传对象也可以通过callback返回
 
 ## Event
-- view级别的：Event.on/emit/off，适合使用当前页面的一些消息传递，跳转action的时候自动销毁，无需担心未销毁导致bug
-- global级别的：Event.onG/emitG/offG，适合用于整个APP的消息传递，需自行销毁事件，以方便污染
+- module级别的：Event.on/emit/off，适合使用当前模块的一些消息传递，切换module的时候自动销毁，无需担心未销毁导致bug
+- global级别的：Event.onG/emitG/offG，适合用于整个APP的消息传递，需自行销毁事件，以防止污染
 
 ## Cache
 - 采用localStorage提供了对缓存的支持，setItem/getItem/removeItem 支持链式写法，因为主要面向移动设备，所以没有兼容不支持localStorage的情况
@@ -53,11 +55,14 @@ HyMobile：宏奕移动H5单页应用框架
 - lib/vender zepto及touch
 - lib/core 框架核心支撑模块
 - lib/base 项目基础模块，如工具类模块
-- lib/app/... APP业务模块
+- app/... APP业务模块
+- style/... 业务依赖的样式
+- tpl/... 业务依赖的模板
 
 # TODO
 - ~~处理下seajs加载后的模块缓存到本地，可采用版本的概念处理更新缓存的问题~~
-- 引入Node.js gulp，将css自动打包成seajs模块，将React JSX自动编译成js
+- ~~引入Node.js gulp，将React JSX、dot模板、CSS等自动编译成module~~
+- 实现module聚合、混淆、压缩
 - 引入Material UI或者 React Bootstrap提供默认的底层UI，并完成loading、dialog、bubble
 
 # FAQ
