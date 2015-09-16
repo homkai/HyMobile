@@ -9,7 +9,7 @@ HyMobile：宏奕移动H5单页应用框架
 - 提供了众多常用组件：url、time、cache、view、data等
 - 缓存seajs modules到localStorage，大大加快页面的加载速度，减少服务器请求
 - URL无权访问到模板模块、_打头的path，如_core、_base等基础modules
-- 自动打包样式文件、模板文件为module，框架支持原生HTML、React和doT模板引擎，你也可以按自己的喜好进行扩展
+- 自动打包样式文件、模板文件为module（详见[gulp-seajs-css](https://github.com/homkai/gulp-seajs-css)、[gulp-seajs-dot](https://github.com/homkai/gulp-seajs-dot)），框架支持原生HTML、React和doT模板引擎，你也可以按自己的喜好进行扩展
 
 ## Tips
 - 首先通过npm install安装依赖，使用gulp自动打包样式和模板文件为module

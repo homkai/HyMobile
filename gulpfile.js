@@ -1,14 +1,13 @@
 var Gulp = require('gulp');
 var Jsx = require('gulp-react');
-var MinifyCss = require('gulp-minify-css');
-var HyMobileWrapper = require('gulp-hymobile-wrapper');
 var Rename = require('gulp-rename');
+var HyMobileWrapper = require('gulp-hymobile-wrapper');
 var Dot = require('gulp-seajs-dot');
+var CSS = require('gulp-seajs-css');
 
 Gulp.task('css', function() {
     return Gulp.src('./style/**/*.css')
-        .pipe(MinifyCss())
-        .pipe(HyMobileWrapper({prefix: 'css_', isCss: true}))
+        .pipe(CSS({prefix: 'css_'}))
         .pipe(Rename(function(path){
             path.basename = 'css_'+path.basename;
         }))
@@ -17,6 +16,7 @@ Gulp.task('css', function() {
 
 Gulp.task('style', ['css']);
 
+// doT模板
 Gulp.task('dot', function() {
     return Gulp.src('./tpl/**/*.html')
         .pipe(Dot({prefix: 'tpl_'}))
@@ -26,6 +26,7 @@ Gulp.task('dot', function() {
         .pipe(Gulp.dest('./app/'));
 });
 
+// React模板
 Gulp.task('jsx', function () {
     return Gulp.src('./tpl/**/*.jsx')
         .pipe(Jsx())
