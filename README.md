@@ -1,5 +1,6 @@
 # HyMobile
 HyMobile：宏奕移动H5单页应用框架
+* 此项目废弃，请参考[hy-ria-starter](https://github.com/homkai/hy-ria-starter) 宏奕单页应用开发快速上手
 
 # Overview
 - HyMobile是基于seajs、zepto（jquery亦可）建立起来的单页应用框架
